@@ -1,5 +1,5 @@
 # 🚀 Skillipop 🌑  
-Welcome to **Skillipop** – a sleek, dark-themed course website designed to deliver an immersive learning platform experience. Whether you're registering for courses, browsing details, or managing your profile, Skillipop brings education to your fingertips with style and simplicity.
+Welcome to **Skillipop** – a sleek, light-themed course website designed to deliver an immersive learning platform experience. Whether you're registering for courses, browsing details, or managing your profile, Skillipop brings education to your fingertips with style and simplicity.
 
 ---
 

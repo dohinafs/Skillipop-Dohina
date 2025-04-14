@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skillipop - Learn Soft Skills Easily</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Collaboration Section */
+.collaborations {
+  background-color: #fff5f3;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.collaborations h2 {
+  font-size: 2rem;
+  color: #ff6f61;
+  margin-bottom: 10px;
+}
+
+.collab-subtext {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.collab-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.collab-logos img {
+  max-height: 60px;
+  max-width: 160px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.collab-logos img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+.personalize {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.personalize h2 {
+  color: #ff6f61;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.personalize-subtext {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+#recommendation-form {
+  max-width: 500px;
+  margin: 0 auto 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#recommendation-form select,
+#recommendation-form button {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.recommendation-results {
+  background-color: #fff5f3;
+  border-left: 4px solid #ff6f61;
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 8px;
+  text-align: left;
+  color: #333;
+  display: none;
+}
+
+/* Popup Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background-color: white;
+  color: #333;
+  padding: 30px 25px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content h2 {
+  font-size: 1.5rem;
+  color: #ff6f61;
+  margin-bottom: 10px;
+}
+
+.popup-content p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.popup-content .btn-primary {
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  color: white;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+
+    /* Trusted Section */
+.trusted {
+  background-color: #fff5f3;
+  padding: 40px 0;
+  text-align: center;
+}
+
+.trusted p {
+  color: #333;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.trusted .logos img {
+  max-width: 100px;
+  margin: 0 15px;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+
+.trusted .logos img:hover {
+  filter: grayscale(0%);
+}
+
+/* How It Works Section */
+.how-it-works {
+  background-color: white;
+  padding: 60px 0;
+}
+
+.how-it-works h2 {
+  text-align: center;
+  color: #ff6f61;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.how-it-works .steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.how-it-works .step {
+  flex: 1 1 220px;
+  max-width: 250px;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff5f3;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.how-it-works .step:hover {
+  transform: translateY(-5px);
+}
+
+.how-it-works .step i {
+  font-size: 2.5rem;
+  color: #ff6f61;
+  margin-bottom: 10px;
+}
+
+.how-it-works .step h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.how-it-works .step p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* CTA Banner */
+.cta-banner {
+  background-color: #ff6f61;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.cta-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.cta-banner p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.cta-banner .btn-primary {
+  background-color: white;
+  color: #ff6f61;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-banner .btn-primary:hover {
+  background-color: #ffe4e1;
+}
+
+.hero-video-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.75;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+.hero-content .btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #ff5e78;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+
+    </style>
+
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <a href="#" class="logo">SKILLIPOP</a>
+        <nav>
+          <ul>
+            <button id="theme-toggle" class="theme-toggle">
+              <i class="fas fa-moon"></i>
+            </button>
+            <li><a href="#">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="dash1.html">Dashboard</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li>
+              <a href="register.html" class="btn btn-primary">Register</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <script src="script.js"></script>
+
+    <!-- Hero Section -->
+<!-- Hero Section with Background Video -->
+<section class="hero-video-section">
+  <video autoplay muted loop playsinline class="hero-video">
+    <source src="herovid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero-content">
+    <h1>Unlock Your Potential</h1>
+    <p>Master essential non-tech skills with Skillipop</p>
+    <a href="#courses" class="btn btn-primary">Start Learning</a>
+  </div>
+</section>
+
+
+
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How Skillipop Works</h2>
+        <div class="steps">
+          <div class="step">
+            <i class="fas fa-user-plus"></i>
+            <h3>Create a Free Account</h3>
+            <p>Sign up with your email and complete a quick onboarding test.</p>
+          </div>
+          <div class="step">
+            <i class="fas fa-search"></i>
+            <h3>Get Personalized Course Suggestions</h3>
+            <p>Get tailored soft skills courses based on your goals and interests.</p>
+          </div>
+          <div class="step">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Learn at Your Own Pace</h3>
+            <p>Watch videos, complete assessments, and track your progress anytime, anywhere.</p>
+          </div>
+          <div class="step">
+            <i class="fas fa-certificate"></i>
+            <h3>Get Certified</h3>
+            <p>Receive a verified Skillipop certificate to showcase your soft skill mastery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+<!-- Personalized Recommendations Section -->
+<section class="personalize">
+  <div class="container">
+    <h2>Find the Perfect Course for You</h2>
+    <p class="personalize-subtext">Answer a few quick questions and get custom course suggestions</p>
+
+    <form id="recommendation-form">
+      <label for="role">I am a:</label>
+      <select id="role" required>
+        <option value="">-- Select your role --</option>
+        <option value="student">Student</option>
+        <option value="job-seeker">Job Seeker</option>
+        <option value="professional">Working Professional</option>
+      </select>
+
+      <label for="interest">I'm most interested in:</label>
+      <select id="interest" required>
+        <option value="">-- Select an interest --</option>
+        <option value="communication">Improving Communication</option>
+        <option value="productivity">Boosting Productivity</option>
+        <option value="leadership">Leadership & Teamwork</option>
+        <option value="confidence">Building Confidence</option>
+      </select>
+
+      <button type="submit" class="btn btn-primary">Get Recommendations</button>
+    </form>
+
+    <div id="recommendations" class="recommendation-results"></div>
+  </div>
+</section>
+
+  
+  <!-- Featured Courses Section -->
+  <section id="courses" class="courses">
+    <div class="container">
+      <h2>Our Soft Skills Courses</h2>
+      <div class="course-grid">
+        <!-- Public Speaking -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-4.0.3&auto=format&fit=crop&w=1412&q=80"
+              alt="Public Speaking"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Communication</div>
+            <h3>Public Speaking Mastery</h3>
+            <p class="course-description">
+              Overcome stage fear and speak with confidence in professional
+              settings
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> Sarah Johnson</span>
+              <span><i class="fas fa-star"></i> 4.8</span>
+              <span><i class="fas fa-clock"></i> 6 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="public_speaking.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Time Management -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+              alt="Time Management"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Productivity</div>
+            <h3>Effective Time Management</h3>
+            <p class="course-description">
+              Master productivity techniques to achieve more in less time
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> Michael Chen</span>
+              <span><i class="fas fa-star"></i> 4.6</span>
+              <span><i class="fas fa-clock"></i> 4 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="effective_time.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Leadership Skills -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80"
+              alt="Leadership"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Management</div>
+            <h3>Leadership Development</h3>
+            <p class="course-description">
+              Develop essential skills to inspire and lead teams effectively
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> David Wilson</span>
+              <span><i class="fas fa-star"></i> 4.7</span>
+              <span><i class="fas fa-clock"></i> 8 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="leadership_dev.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Emotional Intelligence -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1587&q=80"
+              alt="Emotional Intelligence"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Self-Awareness</div>
+            <h3>Emotional Intelligence</h3>
+            <p class="course-description">
+              Understand and manage emotions for better relationships
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> Lisa Wong</span>
+              <span><i class="fas fa-star"></i> 4.9</span>
+              <span><i class="fas fa-clock"></i> 5 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="emotional_intel.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Team Collaboration -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1590402494682-cd3fb53b1f70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+              alt="Teamwork"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Workplace Skills</div>
+            <h3>Team Collaboration</h3>
+            <p class="course-description">
+              Enhance your ability to work effectively in teams
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> Robert Garcia</span>
+              <span><i class="fas fa-star"></i> 4.5</span>
+              <span><i class="fas fa-clock"></i> 4 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="team_collab.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conflict Resolution -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+              alt="Conflict Resolution"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Communication</div>
+            <h3>Conflict Resolution</h3>
+            <p class="course-description">
+              Learn strategies to resolve workplace conflicts effectively
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> Priya Patel</span>
+              <span><i class="fas fa-star"></i> 4.4</span>
+              <span><i class="fas fa-clock"></i> 3 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="conflict_reso.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Negotiation Skills -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1554260570-9140fd3b7614?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+              alt="Negotiation Skills"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Communication</div>
+            <h3>Art of Negotiation</h3>
+            <p class="course-description">
+              Master win-win negotiation strategies for business and personal success
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> Emma Rodriguez</span>
+              <span><i class="fas fa-star"></i> 4.7</span>
+              <span><i class="fas fa-clock"></i> 5 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="courses.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Critical Thinking -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+              alt="Critical Thinking"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Productivity</div>
+            <h3>Critical Thinking Masterclass</h3>
+            <p class="course-description">
+              Develop analytical skills to make better decisions and solve complex problems
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> David Kim</span>
+              <span><i class="fas fa-star"></i> 4.9</span>
+              <span><i class="fas fa-clock"></i> 4 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="courses.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Networking -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80"
+              alt="Networking"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Career Development</div>
+            <h3>Strategic Networking</h3>
+            <p class="course-description">
+              Build meaningful professional relationships that advance your career
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> Olivia Chen</span>
+              <span><i class="fas fa-star"></i> 4.5</span>
+              <span><i class="fas fa-clock"></i> 3 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="courses.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Creativity & Innovation -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1471&q=80"
+              alt="Creativity"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Self-Improvement</div>
+            <h3>Creativity & Innovation</h3>
+            <p class="course-description">
+              Unlock your creative potential and develop breakthrough ideas
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> Marcus Wright</span>
+              <span><i class="fas fa-star"></i> 4.6</span>
+              <span><i class="fas fa-clock"></i> 6 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="courses.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stress Management -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+              alt="Stress Management"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Wellness</div>
+            <h3>Stress Management</h3>
+            <p class="course-description">
+              Learn techniques to manage stress and maintain work-life balance
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> Sophia Patel</span>
+              <span><i class="fas fa-star"></i> 4.8</span>
+              <span><i class="fas fa-clock"></i> 4 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="courses.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Business Writing -->
+        <div class="course-card">
+          <div class="course-image">
+            <img
+              src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80"
+              alt="Business Writing"
+            />
+          </div>
+          <div class="course-content">
+            <div class="course-category">Communication</div>
+            <h3>Effective Business Writing</h3>
+            <p class="course-description">
+              Master professional writing for emails, reports, and proposals
+            </p>
+            <div class="course-meta">
+              <span><i class="fas fa-user"></i> Thomas Reynolds</span>
+              <span><i class="fas fa-star"></i> 4.7</span>
+              <span><i class="fas fa-clock"></i> 5 weeks</span>
+            </div>
+            <div class="course-actions">
+              <a href="courses.html" class="btn">View Details</a>
+              <a href="login.html" class="btn btn-primary">Enroll Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+ <!-- Collaboration Section -->
+<section class="collaborations">
+  <div class="container">
+    <h2>We Collaborate With Leading Companies</h2>
+    <p class="collab-subtext">Trusted by global institutions to empower learners with soft skills that matter</p>
+    <div class="collab-logos">
+      <!-- Companies -->
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft" title="Microsoft">
+      <img src="https://1000logos.net/wp-content/uploads/2021/05/Google-logo.png" alt="Google" title="Google">
+      <img src="https://1000logos.net/wp-content/uploads/2017/03/Linkedin-Logo-2003.png" alt="LinkedIn" title="LinkedIn">
+    </div>
+  </div>
+</section>
+ 
+  <!-- Testimonials Section -->
+  <section class="stories-hero">
+    <div class="container">
+        <h1>Transformations That Inspire</h1>
+        <p>See how Skillipop has helped people achieve their goals</p>
+    </div>
+</section>
+
+<section class="stories-grid">
+    <div class="container">
+        <!-- Story 1 -->
+        <article class="story-card" data-category="career">
+            <div class="story-media">
+                <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sarah's success story">
+                <div class="video-icon"><i class="fas fa-play"></i></div>
+            </div>
+            <div class="story-content">
+                <h3>From Intern to Manager in 6 Months</h3>
+                <p class="story-meta">Sarah K. | Public Speaking Mastery</p>
+                <div class="story-excerpt">
+                    <p>"After completing the Public Speaking course, I gained the confidence to present my ideas clearly. Within months, I was leading team meetings and got promoted!"</p>
+                </div>
+                <a href="#" class="read-more">Read Full Story →</a>
+            </div>
+        </article>
+
+        <!-- Story 2 -->
+        <article class="story-card" data-category="confidence">
+            <div class="story-media">
+                <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="James's success story">
+            </div>
+            <div class="story-content">
+                <h3>Overcoming Social Anxiety</h3>
+                <p class="story-meta">James T. | Emotional Intelligence</p>
+                <div class="story-excerpt">
+                    <p>"The Emotional Intelligence course helped me understand and manage my anxiety in social situations. I've made more friends in the last year than in my whole life."</p>
+                </div>
+                <a href="#" class="read-more">Read Full Story →</a>
+            </div>
+        </article>
+
+
+  
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+      <h2>Start Your Journey Toward Personal & Professional Growth</h2>
+      <p>Build skills that make you stand out — for free.</p>
+      <a href="register.html" class="btn btn-primary">Join Skillipop</a>
+    </div>
+  </section>
+  
+<br> 
+
+    <footer>
+        <div class="footer-links">
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2025 Skillipop. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Soft Skills Roadmap Popup -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-content">
+    <span class="close-btn" id="close-popup">&times;</span>
+    <h2>Want to build your perfect soft skills roadmap?</h2>
+    <p>Take a free 1-minute assessment and get personalized course suggestions instantly!</p>
+    <a href="assessment.html" class="btn btn-primary">Take the Assessment</a>
+  </div>
+</div>
+
+    <script>
+      const form = document.getElementById('recommendation-form');
+      const output = document.getElementById('recommendations');
+    
+      const courseMap = {
+        student: {
+          communication: "📢 *Public Speaking Mastery* - Speak confidently in front of peers and teachers.",
+          productivity: "⏱ *Time Management* - Learn to juggle studies and activities like a pro.",
+          leadership: "🌟 *Team Collaboration* - Ace group projects and lead initiatives.",
+          confidence: "💬 *Emotional Intelligence* - Handle stress and social settings smoothly."
+        },
+        "job-seeker": {
+          communication: "✍️ *Business Writing* - Write resumes, emails, and proposals that impress.",
+          productivity: "📅 *Critical Thinking* - Prepare better for interviews and problem-solving.",
+          leadership: "📈 *Leadership Development* - Start leading before you’re hired.",
+          confidence: "🧠 *Emotional Resilience* - Stay strong through the job hunt."
+        },
+        professional: {
+          communication: "🎤 *Art of Negotiation* - Navigate meetings and deals with ease.",
+          productivity: "🚀 *Time Management* - Maximize your working hours.",
+          leadership: "🏆 *Leadership Development* - Move toward managerial roles.",
+          confidence: "😌 *Stress Management* - Thrive under pressure and deadlines."
+        }
+      };
+    
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const role = document.getElementById('role').value;
+        const interest = document.getElementById('interest').value;
+    
+        if (role && interest) {
+          const recommendation = courseMap[role][interest];
+          output.innerHTML = `<strong>Recommended Course:</strong><br><p>${recommendation}</p>`;
+          output.style.display = 'block';
+        }
+      });
+
+  // Show popup after 5 seconds
+  window.onload = function () {
+    setTimeout(() => {
+      document.getElementById("popup").style.display = "flex";
+    }, 5000); // Show after 5 seconds
+  };
+
+  // Close popup on click
+  document.getElementById("close-popup").addEventListener("click", () => {
+    document.getElementById("popup").style.display = "none";
+  });
+
+    </script>
+    
+  </body>
+</html>

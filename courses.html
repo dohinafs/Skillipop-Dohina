@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skillipop - All Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">SKILLIPOP</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="dash1.html">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html" class="btn btn-primary">Register</a></li>
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle">
+                            <i class="fas fa-moon"></i>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Course Filters -->
+    <section class="course-filters">
+        <div class="container">
+            <div class="filter-container">
+                <input type="text" id="search-input" placeholder="Search courses...">
+                <div class="category-filters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="Communication">Communication</button>
+                    <button class="filter-btn" data-category="Productivity">Productivity</button>
+                    <button class="filter-btn" data-category="Management">Management</button>
+                    <button class="filter-btn" data-category="Self-Awareness">Self-Awareness</button>
+                    <button class="filter-btn" data-category="Career Development">Career</button>
+                    <button class="filter-btn" data-category="Wellness">Wellness</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Grid Section -->
+    <section class="course-listing">
+        <div class="container">
+            <div class="course-grid" id="course-grid">
+                <!-- Public Speaking -->
+                <div class="course-card" data-category="Communication" 
+                     data-keywords="public speaking presentation communication">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Public Speaking">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Communication</span>
+                        <h3>Public Speaking Mastery</h3>
+                        <p class="course-description">
+                            Master the art of public speaking with proven techniques from TEDx speakers.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 6 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="public_speaking.html" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Time Management -->
+                <div class="course-card" data-category="Productivity" 
+                     data-keywords="time management productivity efficiency">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Time Management">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Productivity</span>
+                        <h3>Effective Time Management</h3>
+                        <p class="course-description">
+                            Transform your productivity with scientifically-backed time management strategies.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 4 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="effective_time.html" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership Development -->
+                <div class="course-card" data-category="Management" 
+                     data-keywords="leadership management team-building">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Leadership">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Management</span>
+                        <h3>Leadership Development</h3>
+                        <p class="course-description">
+                            Gain insight into building inner stability and developing your leadership skills.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 8 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="leadership_dev.html" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emotional Intelligence -->
+                <div class="course-card" data-category="Self-Awareness" 
+                     data-keywords="emotions relationships self-awareness">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Emotional Intelligence">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Self-Awareness</span>
+                        <h3>Emotional Intelligence</h3>
+                        <p class="course-description">
+                            Develop the ability to understand, use, and manage your own emotions.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 5 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="emotional_intel.html" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Collaboration -->
+                <div class="course-card" data-category="Management" 
+                     data-keywords="teamwork collaboration workplace">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Team Collaboration">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Management</span>
+                        <h3>Team Collaboration</h3>
+                        <p class="course-description">
+                            Learn the secrets of high-performing teams and how to foster collaboration.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 4 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="team_collab.html" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conflict Resolution -->
+                <div class="course-card" data-category="Communication" 
+                     data-keywords="conflict resolution workplace communication">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Conflict Resolution">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Communication</span>
+                        <h3>Conflict Resolution</h3>
+                        <p class="course-description">
+                            Acquire practical skills to resolve conflicts in professional settings.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 3 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.4</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="conflict_reso.html" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Art of Negotiation -->
+                <div class="course-card" data-category="Communication" 
+                     data-keywords="negotiation business deals communication">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Negotiation">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Communication</span>
+                        <h3>Art of Negotiation</h3>
+                        <p class="course-description">
+                            Master win-win negotiation strategies for business and personal success.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 5 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Critical Thinking Masterclass -->
+                <div class="course-card" data-category="Productivity" 
+                     data-keywords="critical thinking analysis problem-solving">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Critical Thinking">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Productivity</span>
+                        <h3>Critical Thinking Masterclass</h3>
+                        <p class="course-description">
+                            Develop analytical skills to make better decisions and solve complex problems.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 4 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Strategic Networking -->
+                <div class="course-card" data-category="Career Development" 
+                     data-keywords="networking career professional relationships">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Networking">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Career Development</span>
+                        <h3>Strategic Networking</h3>
+                        <p class="course-description">
+                            Build meaningful professional relationships that advance your career.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 3 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.5</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Creativity & Innovation -->
+                <div class="course-card" data-category="Self-Awareness" 
+                     data-keywords="creativity innovation problem-solving">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Creativity">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Self-Awareness</span>
+                        <h3>Creativity & Innovation</h3>
+                        <p class="course-description">
+                            Unlock your creative potential and develop breakthrough ideas.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 6 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stress Management -->
+                <div class="course-card" data-category="Wellness" 
+                     data-keywords="stress management wellness work-life balance">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Stress Management">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Wellness</span>
+                        <h3>Stress Management</h3>
+                        <p class="course-description">
+                            Learn techniques to manage stress and maintain work-life balance.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 4 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Effective Business Writing -->
+                <div class="course-card" data-category="Communication" 
+                     data-keywords="business writing professional communication">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Business Writing">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Communication</span>
+                        <h3>Effective Business Writing</h3>
+                        <p class="course-description">
+                            Master professional writing for emails, reports, and proposals.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 5 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW COURSE 1: Digital Productivity Tools -->
+                <div class="course-card" data-category="Productivity" 
+                     data-keywords="digital tools apps efficiency">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Digital Tools">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Productivity</span>
+                        <h3>Digital Productivity Tools</h3>
+                        <p class="course-description">
+                            Master the latest digital tools to boost your efficiency and organization.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 3 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW COURSE 2: Career Branding -->
+                <div class="course-card" data-category="Career Development" 
+                     data-keywords="career branding resume linkedin">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Career Branding">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Career Development</span>
+                        <h3>Career Branding</h3>
+                        <p class="course-description">
+                            Build a powerful personal brand to stand out in today's competitive job market.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 4 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW COURSE 3: Mindfulness Meditation -->
+                <div class="course-card" data-category="Wellness" 
+                     data-keywords="mindfulness meditation stress relief">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Mindfulness">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Wellness</span>
+                        <h3>Mindfulness Meditation</h3>
+                        <p class="course-description">
+                            Learn mindfulness techniques to reduce stress and improve focus in daily life.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 5 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW COURSE 4: Project Management Fundamentals -->
+                <div class="course-card" data-category="Management" 
+                     data-keywords="project management agile scrum">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Project Management">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Management</span>
+                        <h3>Project Management Fundamentals</h3>
+                        <p class="course-description">
+                            Essential skills for managing projects effectively using modern methodologies.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 6 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+                 
+                <!-- 1. Presentation Skills Masterclass -->
+<div class="course-card" data-category="Communication" 
+data-keywords="presentation slides public speaking">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Presentation Skills">
+</div>
+<div class="course-content">
+   <span class="course-category">Communication</span>
+   <h3>Presentation Skills Masterclass</h3>
+   <p class="course-description">
+       Craft compelling presentations that captivate your audience and deliver your message effectively.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 5 weeks</span>
+       <span><i class="fas fa-star"></i> 4.7</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 2. Goal Setting & Achievement -->
+<div class="course-card" data-category="Productivity" 
+data-keywords="goals planning success">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Goal Setting">
+</div>
+<div class="course-content">
+   <span class="course-category">Productivity</span>
+   <h3>Goal Setting & Achievement</h3>
+   <p class="course-description">
+       Learn proven techniques to set meaningful goals and develop strategies to achieve them.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 4 weeks</span>
+       <span><i class="fas fa-star"></i> 4.6</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 3. Decision Making for Leaders -->
+<div class="course-card" data-category="Management" 
+data-keywords="decisions leadership choices">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1460518451285-97b6aa326961?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Decision Making">
+</div>
+<div class="course-content">
+   <span class="course-category">Management</span>
+   <h3>Decision Making for Leaders</h3>
+   <p class="course-description">
+       Master frameworks for making effective decisions in complex business environments.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 6 weeks</span>
+       <span><i class="fas fa-star"></i> 4.8</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 4. Building Self-Confidence -->
+<div class="course-card" data-category="Self-Awareness" 
+data-keywords="confidence self-esteem growth">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Self-Confidence">
+</div>
+<div class="course-content">
+   <span class="course-category">Self-Awareness</span>
+   <h3>Building Self-Confidence</h3>
+   <p class="course-description">
+       Develop unshakable self-confidence through mindset shifts and practical exercises.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 5 weeks</span>
+       <span><i class="fas fa-star"></i> 4.9</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 5. Interview Success Strategies -->
+<div class="course-card" data-category="Career Development" 
+data-keywords="interviews jobs hiring">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Interview Success">
+</div>
+<div class="course-content">
+   <span class="course-category">Career Development</span>
+   <h3>Interview Success Strategies</h3>
+   <p class="course-description">
+       Ace any job interview with proven techniques for preparation and confident delivery.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 3 weeks</span>
+       <span><i class="fas fa-star"></i> 4.7</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 6. Work-Life Balance Mastery -->
+<div class="course-card" data-category="Wellness" 
+data-keywords="balance wellbeing harmony">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Work-Life Balance">
+</div>
+<div class="course-content">
+   <span class="course-category">Wellness</span>
+   <h3>Work-Life Balance Mastery</h3>
+   <p class="course-description">
+       Create sustainable balance between professional success and personal wellbeing.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 4 weeks</span>
+       <span><i class="fas fa-star"></i> 4.8</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 7. Business Email Etiquette -->
+<div class="course-card" data-category="Communication" 
+data-keywords="email professional writing">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Email Etiquette">
+</div>
+<div class="course-content">
+   <span class="course-category">Communication</span>
+   <h3>Business Email Etiquette</h3>
+   <p class="course-description">
+       Master professional email communication that gets results and builds relationships.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 3 weeks</span>
+       <span><i class="fas fa-star"></i> 4.5</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 8. Focus & Concentration -->
+<div class="course-card" data-category="Productivity" 
+data-keywords="focus concentration attention">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Focus">
+</div>
+<div class="course-content">
+   <span class="course-category">Productivity</span>
+   <h3>Focus & Concentration</h3>
+   <p class="course-description">
+       Train your brain for deep focus and sustained attention in our distracted world.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 4 weeks</span>
+       <span><i class="fas fa-star"></i> 4.7</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 9. Delegation Skills -->
+<div class="course-card" data-category="Management" 
+data-keywords="delegation leadership teamwork">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Delegation">
+</div>
+<div class="course-content">
+   <span class="course-category">Management</span>
+   <h3>Delegation Skills</h3>
+   <p class="course-description">
+       Learn to delegate effectively to maximize team productivity and development.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 3 weeks</span>
+       <span><i class="fas fa-star"></i> 4.6</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 10. Growth Mindset Development -->
+<div class="course-card" data-category="Self-Awareness" 
+data-keywords="mindset growth learning">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1494172961521-33799ddd43a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Growth Mindset">
+</div>
+<div class="course-content">
+   <span class="course-category">Self-Awareness</span>
+   <h3>Growth Mindset Development</h3>
+   <p class="course-description">
+       Cultivate a growth mindset to embrace challenges and accelerate your learning.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 5 weeks</span>
+       <span><i class="fas fa-star"></i> 4.9</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 11. Resume Writing Workshop -->
+<div class="course-card" data-category="Career Development" 
+data-keywords="resume CV job search">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Resume Writing">
+</div>
+<div class="course-content">
+   <span class="course-category">Career Development</span>
+   <h3>Resume Writing Workshop</h3>
+   <p class="course-description">
+       Create a standout resume that gets you noticed by recruiters and hiring managers.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 2 weeks</span>
+       <span><i class="fas fa-star"></i> 4.8</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 12. Sleep Optimization -->
+<div class="course-card" data-category="Wellness" 
+data-keywords="sleep health energy">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1531353826977-0941b4779a1c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Sleep Optimization">
+</div>
+<div class="course-content">
+   <span class="course-category">Wellness</span>
+   <h3>Sleep Optimization</h3>
+   <p class="course-description">
+       Science-backed techniques to improve sleep quality and boost daytime energy.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 3 weeks</span>
+       <span><i class="fas fa-star"></i> 4.9</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 13. Difficult Conversations -->
+<div class="course-card" data-category="Communication" 
+data-keywords="conversations conflict feedback">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Difficult Conversations">
+</div>
+<div class="course-content">
+   <span class="course-category">Communication</span>
+   <h3>Difficult Conversations</h3>
+   <p class="course-description">
+       Navigate challenging discussions with confidence and emotional intelligence.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 4 weeks</span>
+       <span><i class="fas fa-star"></i> 4.7</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 14. Digital Detox & Focus -->
+<div class="course-card" data-category="Productivity" 
+data-keywords="digital detox focus technology">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Digital Detox">
+</div>
+<div class="course-content">
+   <span class="course-category">Productivity</span>
+   <h3>Digital Detox & Focus</h3>
+   <p class="course-description">
+       Reclaim your focus by managing digital distractions and building better habits.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 3 weeks</span>
+       <span><i class="fas fa-star"></i> 4.8</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 15. Change Management -->
+<div class="course-card" data-category="Management" 
+data-keywords="change transition adaptation">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Change Management">
+</div>
+<div class="course-content">
+   <span class="course-category">Management</span>
+   <h3>Change Management</h3>
+   <p class="course-description">
+       Lead teams through transitions and implement successful change initiatives.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 5 weeks</span>
+       <span><i class="fas fa-star"></i> 4.7</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+<!-- 16. Emotional Resilience -->
+<div class="course-card" data-category="Self-Awareness" 
+data-keywords="resilience coping stress">
+<div class="course-image">
+   <img src="https://images.unsplash.com/photo-1494172961521-33799ddd43a5?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Emotional Resilience">
+</div>
+<div class="course-content">
+   <span class="course-category">Self-Awareness</span>
+   <h3>Emotional Resilience</h3>
+   <p class="course-description">
+       Build mental toughness and bounce back stronger from life's challenges.
+   </p>
+   <div class="course-meta">
+       <span><i class="fas fa-clock"></i> 6 weeks</span>
+       <span><i class="fas fa-star"></i> 4.9</span>
+   </div>
+   <div class="course-actions">
+       <a href="#" class="btn btn-outline">Details</a>
+       <a href="login.html" class="btn btn-primary">Enroll</a>
+   </div>
+</div>
+</div>
+
+                <!-- NEW COURSE 5: Interpersonal Communication -->
+                <div class="course-card" data-category="Communication" 
+                     data-keywords="interpersonal communication relationships">
+                    <div class="course-image">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Interpersonal Communication">
+                    </div>
+                    <div class="course-content">
+                        <span class="course-category">Communication</span>
+                        <h3>Interpersonal Communication</h3>
+                        <p class="course-description">
+                            Enhance your ability to communicate effectively in personal and professional relationships.
+                        </p>
+                        <div class="course-meta">
+                            <span><i class="fas fa-clock"></i> 4 weeks</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                        <div class="course-actions">
+                            <a href="#" class="btn btn-outline">Details</a>
+                            <a href="login.html" class="btn btn-primary">Enroll</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2025 Skillipop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('search-input');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const courseCards = document.querySelectorAll('.course-card'); // or course-detail-card
+
+    function filterCourses() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const activeCategory = document.querySelector('.filter-btn.active').dataset.category;
+
+        courseCards.forEach(card => {
+            const category = card.dataset.category;
+            const keywords = card.dataset.keywords.toLowerCase();
+            const title = card.querySelector('h3').textContent.toLowerCase(); // or h2
+            const matchesSearch = keywords.includes(searchTerm) || title.includes(searchTerm);
+            const matchesCategory = activeCategory === 'all' || category === activeCategory;
+
+            card.style.display = (matchesSearch && matchesCategory) ? 'block' : 'none';
+        });
+    }
+
+    searchInput.addEventListener('input', filterCourses);
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            filterCourses();
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

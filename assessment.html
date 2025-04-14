@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skillipop - Soft Skills Assessment</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff5f3;
+      padding: 40px 20px;
+      color: #333;
+    }
+
+    .assessment-container {
+      max-width: 700px;
+      background: white;
+      padding: 30px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      color: #ff6f61;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .question label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    button {
+      margin-top: 20px;
+      background-color: #ff6f61;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff5f3;
+      border-left: 5px solid #ff6f61;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .result h2 {
+      color: #ff6f61;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="assessment-container">
+    <a href="index.html" text-align="center">Home</a>
+    <h1>Your Soft Skills Assessment</h1>
+    <p style="text-align:center;">Answer a few quick questions to get your perfect Skillipop course suggestion!</p>
+
+    <div class="question">
+      <label for="goal">What is your main goal?</label>
+      <select id="goal">
+        <option value="">-- Select an option --</option>
+        <option value="speak">Become a confident speaker</option>
+        <option value="manage">Improve time and productivity</option>
+        <option value="lead">Develop leadership skills</option>
+        <option value="balance">Manage stress and emotions</option>
+      </select>
+    </div>
+
+    <div class="question">
+      <label for="stage">Where are you currently?</label>
+      <select id="stage">
+        <option value="">-- Select an option --</option>
+        <option value="student">Student</option>
+        <option value="job-seeker">Job Seeker</option>
+        <option value="working">Working Professional</option>
+      </select>
+    </div>
+
+    <button onclick="getRecommendation()">Get My Recommendation</button>
+
+    <div class="result" id="result">
+      <h2>🎯 Recommended for You:</h2>
+      <p id="result-text"></p>
+      <a href="courses.html" class="btn btn-primary" style="display:inline-block; margin-top: 10px;">Explore Courses</a>
+    </div>
+  </div>
+
+  <script>
+    function getRecommendation() {
+      const goal = document.getElementById("goal").value;
+      const stage = document.getElementById("stage").value;
+      const result = document.getElementById("result");
+      const resultText = document.getElementById("result-text");
+
+      if (!goal || !stage) {
+        alert("Please select both options to continue.");
+        return;
+      }
+
+      let course = "";
+
+      if (goal === "speak") course = "💬 <strong>Public Speaking Mastery</strong> – Perfect for improving confidence and presentations.";
+      else if (goal === "manage") course = "⏱ <strong>Effective Time Management</strong> – Learn how to focus and prioritize daily goals.";
+      else if (goal === "lead") course = "🏆 <strong>Leadership Development</strong> – Learn how to inspire, lead, and guide a team.";
+      else if (goal === "balance") course = "😌 <strong>Emotional Intelligence</strong> – Build resilience and understand emotional cues.";
+
+      let prefix = "";
+      if (stage === "student") prefix = "As a student, you’ll benefit from...";
+      else if (stage === "job-seeker") prefix = "As a job seeker, mastering this will boost your confidence in interviews.";
+      else prefix = "As a working professional, this course will improve your performance at work.";
+
+      resultText.innerHTML = `${prefix}<br>${course}`;
+      result.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skillipop - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">SKILLIPOP</a>
+            <nav>
+                <ul>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="index.html#courses">Courses</a></li>
+                    <li><a href="login.html" class="btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <script src="script.js"></script>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard">
+        <div class="container">
+            <div class="dashboard-grid">
+                <!-- Sidebar -->
+                <aside class="dashboard-sidebar">
+                    <div class="user-profile">
+                        <div class="avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3>Guest User</h3>
+                    </div>
+                    
+                    <nav class="dashboard-nav">
+                        <a href="#" class="active"><i class="fas fa-home"></i> Overview</a>
+                        <a href="#courses"><i class="fas fa-book-open"></i> My Courses</a>
+                        <a href="#"><i class="fas fa-certificate"></i> Certificates</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                    </nav>
+                </aside>
+
+                <!-- Main Content -->
+                <div class="dashboard-main">
+                    <!-- Welcome Banner -->
+                    <section class="welcome-banner">
+                        <h1>Welcome Back!</h1>
+                        <p>Continue your learning journey</p>
+                    </section>
+
+                    <!-- Ongoing Courses -->
+                    <section class="dashboard-section">
+                        <h2>Ongoing Courses</h2>
+                        <div class="course-progress-grid">
+                            <!-- Course 1 -->
+                            <div class="course-progress-card">
+                                <div class="course-info">
+                                    <h3>Public Speaking Mastery</h3>
+                                    <p>Completed: 100%</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 100%"></div>
+                                </div>
+                                <a href="public_speaking.html" class="btn btn-primary">Continue</a>
+                            </div>
+
+                            <!-- Course 2 -->
+                            <div class="course-progress-card">
+                                <div class="course-info">
+                                    <h3>Time Management</h3>
+                                    <p>Completed: 80%</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 80%"></div>
+                                </div>
+                                <a href="effective_time.html" class="btn btn-primary">Continue</a>
+                            </div>
+
+                            <!-- Course 3 -->
+                            <div class="course-progress-card">
+                                <div class="course-info">
+                                    <h3>Effective Leadership</h3>
+                                    <p>Completed: 55%</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 55%"></div>
+                                </div>
+                                <a href="leadership_dev.html" class="btn btn-primary">Continue</a>
+                            </div>
+
+                            <!-- Course 4 -->
+                            <div class="course-progress-card">
+                                <div class="course-info">
+                                    <h3>Creative Problem Solving</h3>
+                                    <p>Completed: 40%</p>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                                <a href="#" class="btn btn-primary">Continue</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Achievements -->
+                    <section class="dashboard-section">
+                        <h2>Achievements</h2>
+                        <div class="achievements-grid">
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-trophy"></i>
+                                </div>
+                                <h3>First Course Completed</h3>
+                                <p>Completed your first course</p>
+                            </div>
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <h3>Perfect Week</h3>
+                                <p>7 consecutive learning days</p>
+                            </div>
+                            <div class="achievement-card">
+                                <div class="achievement-icon">
+                                    <i class="fas fa-medal"></i>
+                                </div>
+                                <h3>Multitasker</h3>
+                                <p>Completed multiple courses</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Progress Statistics -->
+                    <section class="dashboard-section">
+                        <h2>Learning Progress</h2>
+                        <div class="progress-graph">
+                            <!-- Placeholder for chart -->
+                            <div class="graph-placeholder">
+                                <p>Progress Chart Placeholder</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2025 Skillipop. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".tab");
+            const contentSections = document.querySelectorAll(".tab-content");
+    
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function () {
+                    const targetContent = document.querySelector(`#${tab.dataset.target}`);
+    
+                    // Remove active class from all tabs and hide all content sections
+                    tabs.forEach(t => t.classList.remove("active"));
+                    contentSections.forEach(c => c.classList.remove("active"));
+    
+                    // Add active class to the clicked tab and display the corresponding content section
+                    tab.classList.add("active");
+                    targetContent.classList.add("active");
+                });
+            });
+        });
+    </script>
+    
+</body>
+</html>

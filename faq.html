@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Skillipop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">SKILLIPOP</a>
+            <nav>
+                <ul>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="dash1.html">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html" class="btn btn-primary">Register</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="faq-hero">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find quick answers to common questions about Skillipop</p>
+        </div>
+    </section>
+
+    <section class="faq-main">
+        <div class="container">
+            <div class="faq-categories">
+                <button class="category-btn active" data-category="all">All Questions</button>
+                <button class="category-btn" data-category="account">Account</button>
+                <button class="category-btn" data-category="courses">Courses</button>
+                <button class="category-btn" data-category="payment">Payment</button>
+                <button class="category-btn" data-category="technical">Technical</button>
+            </div>
+
+            <div class="faq-container">
+                <!-- Account FAQs -->
+                <div class="faq-item" data-category="account">
+                    <h3>How do I create an account? <i class="fas fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>Click the "Register" button in the top navigation and fill out the form with your details. You can also sign up using your Google or Facebook account.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-category="account">
+                    <h3>I forgot my password. How can I reset it? <i class="fas fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>On the login page, click "Forgot Password" and enter your email address. You'll receive a password reset link within 5 minutes.</p>
+                    </div>
+                </div>
+
+                <!-- Courses FAQs -->
+                <div class="faq-item" data-category="courses">
+                    <h3>Are there any prerequisites for the courses? <i class="fas fa-chevron-down"></i></h3>
+                    <div class="faq-answer">
+                        <p>Most of our courses are designed for beginners with no prior experience. Some advanced courses may recommend completing foundational courses first.</p>
+                    </div>
+                </div>
+
+                <!-- Add 10+ more FAQ items following the same pattern -->
+
+            </div>
+
+            <div class="support-cta">
+                <h2>Still have questions?</h2>
+                <p>Our support team is ready to help you 24/7</p>
+                <a href="contact.html" class="btn btn-primary">Contact Support</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2025 Skillipop. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle and Filter Functionality
+        document.querySelectorAll('.faq-item h3').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                answer.classList.toggle('active');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+
+        // Category Filter
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const category = btn.dataset.category;
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if(category === 'all' || item.dataset.category === category) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

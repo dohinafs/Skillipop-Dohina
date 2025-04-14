@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success Stories - Skillipop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">SKILLIPOP</a>
+            <nav>
+                <ul>
+                    <button id="theme-toggle" class="theme-toggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html" class="btn btn-primary">Register</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="stories-hero">
+        <div class="container">
+            <h1>Transformations That Inspire</h1>
+            <p>See how Skillipop has helped people achieve their goals</p>
+        </div>
+    </section>
+
+    <section class="stories-filter">
+        <div class="container">
+            <div class="filter-options">
+                <button class="filter-btn active" data-filter="all">All Stories</button>
+                <button class="filter-btn" data-filter="career">Career Growth</button>
+                <button class="filter-btn" data-filter="confidence">Confidence Boost</button>
+                <button class="filter-btn" data-filter="leadership">Leadership</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="stories-grid">
+        <div class="container">
+            <!-- Story 1 -->
+            <article class="story-card" data-category="career">
+                <div class="story-media">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sarah's success story">
+                    <div class="video-icon"><i class="fas fa-play"></i></div>
+                </div>
+                <div class="story-content">
+                    <h3>From Intern to Manager in 6 Months</h3>
+                    <p class="story-meta">Sarah K. | Public Speaking Mastery</p>
+                    <div class="story-excerpt">
+                        <p>"After completing the Public Speaking course, I gained the confidence to present my ideas clearly. Within months, I was leading team meetings and got promoted!"</p>
+                    </div>
+                    <a href="#" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+
+            <!-- Story 2 -->
+            <article class="story-card" data-category="confidence">
+                <div class="story-media">
+                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="James's success story">
+                </div>
+                <div class="story-content">
+                    <h3>Overcoming Social Anxiety</h3>
+                    <p class="story-meta">James T. | Emotional Intelligence</p>
+                    <div class="story-excerpt">
+                        <p>"The Emotional Intelligence course helped me understand and manage my anxiety in social situations. I've made more friends in the last year than in my whole life."</p>
+                    </div>
+                    <a href="#" class="read-more">Read Full Story →</a>
+                </div>
+            </article>
+
+            <!-- Add 4-6 more stories following same pattern -->
+
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Transform Your Skills?</h2>
+            <a href="courses.html" class="btn btn-primary">Browse All Courses</a>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script>
+        // Story Filter Functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.dataset.filter;
+                document.querySelectorAll('.story-card').forEach(card => {
+                    if(filter === 'all' || card.dataset.category === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
